@@ -1,7 +1,8 @@
-# To build the dev Dockerfile
+# Building the app
+docker-compose -f docker-compose-dev.yml up --build
 
-docker build -f Dockerfile.dev .
+# Running the app
+docker-compose -f docker-compose-dev.yml up
 
-# To run the created container using volumes
-
-docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app {IMG_ID}
+# Removing the app
+docker-compose -f docker-compose-dev.yml down
